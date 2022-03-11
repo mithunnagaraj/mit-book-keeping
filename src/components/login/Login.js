@@ -72,7 +72,9 @@ function Login() {
 
   const handleAuthClick = (event) => {
     gapi.auth2.getAuthInstance().signIn().then(function () {
-      dispatch(setIsSignedIn(true))
+      dispatch(setIsSignedIn(true));
+      dispatch(setUser(gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile()));
+      dispatch(setUserToken(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse()));
     }, function (error) { });
   };
 

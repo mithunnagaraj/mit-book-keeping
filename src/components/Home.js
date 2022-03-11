@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import { gapi } from 'gapi-script';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import AddBill from './AddBill';
 import Appbar from './Appbar';
 import DetailsPage from './DetailsPage';
 
@@ -145,6 +146,9 @@ function Home() {
                     </Grid>
                     <Grid item xs={12}>
                         <DetailsPage></DetailsPage>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <AddBill></AddBill>
                     </Grid>
                 </Grid>
             </Container>
